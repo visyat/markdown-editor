@@ -1,0 +1,22 @@
+{
+  "name": "markdown-editor",
+  "version": "1.0.0",
+  "description": "Personal Markdown Editor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "markdown-editor"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "author": "Vishal Yathish",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^34.0.1"
+  }
+}

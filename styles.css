@@ -1,0 +1,34 @@
+:root {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Inter';
+    margin: 0;
+    /* padding: 0; */
+    height: 80vh;
+    padding: 0 2rem;
+}
+#editor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: inherit;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    align-items: center;
+}
+#editor textarea {
+    resize: none;
+    width: 50%;
+    border: 2px solid black;
+    height: inherit;
+}
+#editor p {
+    width: 50%;
+    border: 2px solid black;
+    height: inherit;
+}
