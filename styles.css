@@ -1,34 +1,202 @@
 :root {
-    box-sizing: border-box;
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --border: #e5e7eb;
+  --primary: #169a74;
+  --primary-hover: #1abf91;
+  --radius: 0.5rem;
 }
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --muted: #1f2937;
+  --muted-foreground: #9ca3af;
+  --border: #27272a;
+  --primary: #169a74;
+  --primary-hover: #1abf91;
+}
+
 * {
-    box-sizing: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Inter';
-    margin: 0;
-    /* padding: 0; */
-    height: 80vh;
-    padding: 0 2rem;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--foreground);
+  background-color: var(--background);
+  padding: 1rem;
 }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
 #editor {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: inherit;
-    margin-bottom: 2rem;
-    gap: 1rem;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: calc(100vh - 8rem);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--muted);
+  padding: 0.5rem;
 }
-#editor textarea {
-    resize: none;
-    width: 50%;
-    border: 2px solid black;
-    height: inherit;
+
+#text-editor,
+#text-render {
+  border-radius: var(--radius);
+  background-color: var(--background);
+  padding: 1.5rem;
+  overflow-y: auto;
 }
-#editor p {
-    width: 50%;
-    border: 2px solid black;
-    height: inherit;
+
+#text-editor {
+  resize: none;
+  border: 1px solid var(--border);
+  font-family: "Inter", monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+#text-editor:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+}
+
+#text-render {
+  border: 1px solid var(--border);
+}
+
+/* Markdown Styling */
+#text-render h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  /* margin: 1.5rem 0 1rem; */
+  text-align: left;
+}
+
+#text-render h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#text-render h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#text-render p {
+  /* margin-bottom: 1rem; */
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+#text-render ul,
+#text-render ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  line-height: 1.25rem;
+}
+
+#text-render li {
+  margin: 0;
+}
+
+#text-render ol ol {
+    margin: 0;
+    padding: 0;
+    padding-left: 3rem;  /* 2 * 1.5rem */
+}
+#text-render ol ol ol {
+    margin: 0;
+    padding: 0;
+    padding-left: 4.5rem;  /* 3 * 1.5rem */
+}
+#text-render ol ol ol ol {
+    margin: 0;
+    padding: 0;
+    padding-left: 6rem;  /* 4 * 1.5rem */
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #editor {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  #text-editor,
+  #text-render {
+    height: 50vh;
+  }
 }

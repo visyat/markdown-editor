@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/> -->
+        <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/> -->
         <link rel="stylesheet" href="styles.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,10 +15,18 @@
         <title>Markdown Editor</title>
     </head>
     <body>
-        <h1>Markdown Editor ...</h1>
-        <div id="editor">
-            <textarea id="text-editor"></textarea>
-            <p id="text-render">Testing Testing ...</p>
+        <div class="container">
+            <h1>Vishal's Markdown Editor ...</h1>
+            <div class="toolbar">
+                <button id="new-btn">+ New</button>
+                <button id="save-btn">Save</button>
+                <button id="print-btn">Print</button>
+                <button id="history-btn">Version History</button>
+            </div>
+            <div id="editor">
+                <textarea id="text-editor" placeholder="Write your markdown here..."></textarea>
+                <div id="text-render"></div>
+            </div>
         </div>
     </body>
 </html>
