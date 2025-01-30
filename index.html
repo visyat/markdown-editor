@@ -18,11 +18,36 @@
         <div class="container">
             <h1>Vishal's Markdown Editor ...</h1>
             <div class="toolbar">
-                <button id="upload-btn"><img src="icons/upload.svg" alt="Upload File" title="Upload File"></button>
-                <button id="new-btn"><img src="icons/new.svg" alt="New Markdown File" title="New Markdown File"></button>
-                <button id="save-btn"><img src="icons/save.svg" alt="Save File" title="Save File"></button>
-                <button id="print-btn"><img src="icons/print.svg" alt="Export to PDF" title="Export to PDF"></button>
-                <button id="history-btn"><img src="icons/history.svg" alt="Version History" title="Version History"></button>
+                <div id="format-options">
+                    <button id="bold-btn"><img src="icons/format_bold.svg" alt="Bold" title="Bold"></button>
+                    <button id="italics-btn"><img src="icons/format_italics.svg" alt="Italics" title="Italics"></button>
+                    <button id="underline-btn"><img src="icons/format_underline.svg" alt="Underline" title="Underline"></button>
+                    <button id="strikethrough-btn"><img src="icons/format_strikethrough.svg" alt="Strikethrough" title="Strikethrough"></button>
+                    <button id="linespace-menu"><img src="icons/format_linespace.svg" alt="Line Space" title="Line Space"></button>
+
+                    <button id="align-left-btn"><img src="icons/align_left.svg" alt="Align Left" title="Align Left"></button>
+                    <button id="align-center-btn"><img src="icons/align_center.svg" alt="Align Center" title="Align Center"></button>
+                    <button id="align-right-btn"><img src="icons/align_right.svg" alt="Align Right" title="Align Right"></button>
+                    <button id="align-justify-btn"><img src="icons/align_justify.svg" alt="Align Justify" title="Align Justify"></button>
+
+                    <button id="inc-indent-btn"><img src="icons/increase_indent.svg" alt="Increase Indent" title="Increase Indent"></button>
+                    <button id="dec-indent-btn"><img src="icons/decrease_indent.svg" alt="Decrease Indent" title="Decrease Indent"></button>
+
+                    <select name="font-menu" id="Font Menu">
+                        <option value="arial">Arial</option>
+                        <option value="times-new-roman">Times New Roman</option>
+                        <option value="helvetica">Helvetica</option>
+                        <option value="calibri">Calibri</option>
+                      </select>
+                    <button id="latex-md-mode"><img src="icons/latex.svg" alt="Latex/Markdown Mode" title="Latex/Markdown Mode"></button>
+                </div>
+                <div id="settings">
+                    <button id="upload-btn"><img src="icons/upload.svg" alt="Upload File" title="Upload File"></button>
+                    <button id="new-btn"><img src="icons/new.svg" alt="New Markdown File" title="New Markdown File"></button>
+                    <button id="save-btn"><img src="icons/save.svg" alt="Save File" title="Save File"></button>
+                    <button id="print-btn"><img src="icons/print.svg" alt="Export to PDF" title="Export to PDF"></button>
+                    <button id="history-btn"><img src="icons/history.svg" alt="Version History" title="Version History"></button>
+                </div>
             </div>
             <div id="editor">
                 <textarea id="text-editor" placeholder="Write your markdown here..."></textarea>

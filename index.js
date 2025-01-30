@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updatePreview() {
         const content = editor.value;
-        const newlines = content.replace(/\n/g, '\\\n');
-        // need to add specific handling of newlines for bullet point lists ...
-        render.innerHTML = marked.parse(newlines);
+        // const newlines = content.replace(/\n/g, '\\\n');
+        // need to add specific handling of newlines for special text formatting 
+        render.innerHTML = marked.parse(content) // .replace(/\\(\s*<\/?[^>]+>)/g, '$1').replace(/\\(\r?\n)/g, '$1');
+        // render.innerHTML = marked.parse(newlines);
     }
-
     editor.addEventListener('input', updatePreview);
     updatePreview();
 
